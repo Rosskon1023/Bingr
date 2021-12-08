@@ -3,8 +3,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 require('dotenv').config();
+const morgan = require('morgan');
+const session = require('express-session');
 /* TO DO: ADD CONTROLLERS */
 const moviesController = require('./controllers/movies.js');
+const usersController = require('./controllers/users.js');
 
 
 
@@ -30,6 +33,14 @@ db.on("disconnected", () => console.log("Mongo is disconnected"));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
+app.use(morgan('dev')); 
+app.use(
+    session({
+        secret: process.env.SECRET,
+        resave: false,
+        saveUninitialized: false
+    })
+);
 
 
 // Mount Routes
@@ -37,6 +48,7 @@ app.use(methodOverride('_method'));
 app.use('/', xxxxController);
 */
 app.use('/', moviesController);
+app.use('/', usersController);
 
 
 // Check if Application is Listening
