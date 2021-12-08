@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 require('dotenv').config();
 /* TO DO: ADD CONTROLLERS */
+const moviesController = require('./controllers/movies.js');
 
 
 
@@ -35,6 +36,7 @@ app.use(methodOverride('_method'));
 /* TO DO: Mount Routes
 app.use('/', xxxxController);
 */
+app.use('/', moviesController);
 
 
 // Check if Application is Listening
