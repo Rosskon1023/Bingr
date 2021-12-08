@@ -11,7 +11,7 @@ const Movie = require('../models/movie.js');
 
 // List Router Actions / Define Routes
 
-moviesRouter.get("/", (req,res) => {
+moviesRouter.get("/movies", (req,res) => {
     axios.get(BASE_URL+'?t=Frozen'+'&apikey='+API_KEY).then(response => {
         req.body.title = response.data.Title
         req.body.director = response.data.Director
@@ -28,4 +28,5 @@ moviesRouter.get("/", (req,res) => {
     })
 });
 
+// Export the Router/Controller Object
 module.exports = moviesRouter;

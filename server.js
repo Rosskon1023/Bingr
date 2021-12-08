@@ -8,6 +8,7 @@ const session = require('express-session');
 /* TO DO: ADD CONTROLLERS */
 const moviesController = require('./controllers/movies.js');
 const usersController = require('./controllers/users.js');
+const indexController = require('./controllers/index.js');
 
 
 
@@ -47,8 +48,10 @@ app.use(
 /* TO DO: Mount Routes
 app.use('/', xxxxController);
 */
-app.use('/', moviesController);
+app.use('/', indexController);
 app.use('/', usersController);
+app.use('/', moviesController);
+
 
 
 // Check if Application is Listening
