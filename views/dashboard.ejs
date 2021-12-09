@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Bingr Dashboard</title>
 </head>
 <body>
-    <nav>
-        <a href="/logout">Logout</a>
-        <a href="/">Home</a>
-    </nav>
-    <h1>It is Popcorn time, <%=user.name%> !!</h1>
-    <div>
-        <a href="/movies">Movies</a>
-        <a href="/shows">Shows</a>
+    <h1>Bingr</h1>
+    <header>
+        <nav class="navBar">
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <div id="dashboardContainer">
+        <h3 id="dashboardWelcome">&#x1F37F;  &#x1F37F;  It's Popcorn time, <%=user.name%> !!  &#x1F37F;  &#x1F37F;  </h1>
+        <div id="dashboardMovie">
+            <a href="/movies">Movies</a>
+        </div>
+        <div id="dashboardShow">  
+            <a href="/shows">Shows</a>
+        </div>
     </div>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
 </body>
 </html>
