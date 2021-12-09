@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Movie</title>
+</head>
+<body>
+        <header>
+            <h1>Movie | Add a New Movie!</h1>
+            <a href="/movies/">Return to Your Movies</a>
+        </header>
+        <form action="/movies" method="POST">
+            Movie Title: <input type="text" name="title"/><br />
+            Have You Watched? <input type="checkbox" name="watched"/><br />
+            Rating (Between 0 and 10):<input type="number" id="rating" name="user_rating" min="0" max="10" step="0.1">
+            <input type="submit" value="Add Movie"/>
+        </form>
+</html>

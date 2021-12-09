@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Index</title>
+  </head>
+  <body>
+    <header>
+        <h1>Movies</h1>
+    </header>
+    <a href="/movies/new">Add a new Movie</a>
+        <h3>Your Watched Movie List!</h3>
+            <% movies.forEach(movie => { %>
+                <% if (movie.watched === true) { %>
+                    <li>
+                        <p><%=movie.title%></p>
+                        <p><%=movie.director%></p>
+                        <a href="/movies/<%=movie._id%>">
+                            <img src=<%= movie.img %>>
+                        </a>
+                        <p><%=movie.plot%></p>
+                    </li>
+                <% } %>
+            <% }) %>
+        <h3>Movies to Watch</h3>
+            <% movies.forEach(movie => { %>
+                <% if (movie.watched === false) { %>
+                    <li>
+                        <p><%=movie.title%></p>
+                        <p><%=movie.director%></p>
+                        <a href="/movies/<%=movie._id%>">
+                            <img src=<%= movie.img %>>
+                        </a>
+                        <p><%=movie.plot%></p>
+                    </li>
+                <% } %>
+            <% }) %>
+  </body>
+</html>

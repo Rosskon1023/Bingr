@@ -8,7 +8,9 @@ const movieSchema = new Schema({
     img: {type:String},
     watched: Boolean,
     plot: {type:String},
+    user_rating: {type:Number},
     rating: {type:String},
+    year: {type:String},
 }, {timestamps:true});
 
 const Movie = mongoose.model("Movie", movieSchema);

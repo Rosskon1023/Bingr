@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Bingr</title>
+    <title>Bingr Dashboard</title>
 </head>
 <body>
-    <h1>Welcome to Bingr</h1>
     <nav>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
         <a href="/logout">Logout</a>
+        <a href="/">Home</a>
     </nav>
+    <h1>It is Popcorn time, <%=user.name%> !!</h1>
+    <div>
+        <a href="/movies">Movies</a>
+        <a href="/shows">Shows</a>
+    </div>
 </body>
 </html>
