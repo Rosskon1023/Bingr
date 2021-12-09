@@ -4,23 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingr | Please Login</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | Login</title>
 </head>
 <body>
-    <h1>Login</h1>
-    <% if(err) { %>
-        <p style="color: red; text-transform: capitalize;"><%=err%></p>
-    <% } %>
-    <form action="/login" method="POST">
-        <label>
-            Email:
-            <input type="email" name="email">
-        </label>
-        <label>
-            Password:
-            <input type="password" name="password">
-        </label>
-        <input type="submit" value="Login">
+    <header>
+        <h1>Bingr</h1>
+        <nav class="navBar">
+            <a class="navItem" href="/">Home</a>
+            <a class="navItem" href="/signup">Signup</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <form class="loginForm" action="/login" method="post">
+        <div class="loginContainer">
+            <label class="loginLabel" for="email"><b>Email:</b></label>
+            <input class="loginInput" type="email" placeholder="Enter Email" name="email">
+            <label class="loginLabel" for="password"><b>Password:</b></label>
+            <input class="loginInput" type="password" placeholder="Enter Password" name="password">
+            <button class="loginButton" type="submit">Login</button>
+        </div>
+        <% if(err) { %>
+            <p style="color: red; text-transform: capitalize;"><%=err%></p>
+        <% } %>
     </form>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
 </body>
 </html>

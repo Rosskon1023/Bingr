@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="htmlhome">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Bingr</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr</title>
 </head>
 <body>
-    <h1>Welcome to Bingr</h1>
-    <nav>
-        <a href="/login">Login</a>
-        <a href="/signup">Signup</a>
-        <a href="/logout">Logout</a>
-    </nav>
+    <header>
+        <h1>Bingr</h1>
+    </header>
+    <main class="homeMain">
+        <div id="homeFormContainer">
+            <div id="homeTitle">
+                Log in to your Library or Sign up for Bingr!
+            </div>
+            <div id="homeContentContainer">
+                <p>Existing User? <a href="/login">Login</a></p>
+                <p>New User? <a href="/signup">Signup</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
 </body>
 </html>

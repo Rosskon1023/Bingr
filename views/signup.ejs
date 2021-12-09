@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bingr | Please Signup</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | Signup</title>
 </head>
 <body>
-    <h1>Ready to Binge?! Please Sign Up</h1>
+    <header>
+        <h1>Bingr</h1>
+        <nav class="navBar">
+            <a class="navItem" href="/">Home</a>
+            <a class="navItem" href="/login">Login</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <!-- <h1>Ready to Binge?! Sign Up</h1>
     <form action="/signup" method="POST">
         <label>
             First Name:
@@ -22,6 +31,21 @@
             <input type="password" name="password">
         </label>
         <input type="submit" value="Signup">
+    </form> -->
+    <form class="signupForm" action="/signup" method="POST">
+        <div class="signupContainer">
+            <label class="signupLabel" for="name"><b>First Name:</b></label>
+            <input class="signupInput" type="text" placeholder="Enter Name" name="name">
+            <label class="signupLabel" for="email"><b>Email:</b></label>
+            <input class="signupInput" type="email" placeholder="Enter Email" name="email">
+            <label class="signupLabel" for="password"><b>Password:</b></label>
+            <input class="signupInput" type="password" placeholder="Enter Password" name="password">
+            <button class="signupButton" type="submit">Signup</button>
+        </div>
     </form>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
 </body>
 </html>
