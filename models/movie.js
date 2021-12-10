@@ -8,6 +8,7 @@ const movieSchema = new Schema({
     img: {type:String},
     watched: Boolean,
     plot: {type:String},
+    box_office: {type:String},
     user_rating: {type:Number},
     rating: {type:String},
     year: {type:String},

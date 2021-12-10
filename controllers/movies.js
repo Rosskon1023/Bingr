@@ -62,6 +62,7 @@ moviesRouter.post("/movies", (req,res) => {
         req.body.director = response.data.Director
         req.body.img = response.data.Poster
         req.body.plot = response.data.Plot
+        req.body.box_office = response.data.BoxOffice
         req.body.rating = response.data.imdbRating
         req.body.year = response.data.Year
         req.body.user_id = req.session.user

@@ -315,15 +315,6 @@ h1 {
     font-style: italic;
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color:white;
-    flex-direction: column;
-    background: rgba(49, 46, 46, 0.4);
-} 
-
 .newForm {
     display: grid;
     grid-template-columns: 0.5fr 1fr 0.5fr;
@@ -365,3 +356,47 @@ footer {
     align-self: flex-end;
 }
 
+.subeditContainer2 {
+    grid-column: 2/3;
+    display:grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows: 2fr 1fr 2fr;
+}
+
+.editCard {
+    grid-row: 2/3;
+    width: 80%;
+    height: 90%;
+    border: 1px solid white;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 5px;
+    box-shadow: rgba(214, 156, 48, 0.685) 0px 10px 30px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+#editForm {
+    margin-left: 20px;
+}
+
+.editCard p {
+    color: black;
+    text-align: left;
+}
+
+.editCard span {
+    font-weight: bold;
+    font-style: italic;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    flex-direction: column;
+    background: rgba(49, 46, 46, 0.4);
+} 
