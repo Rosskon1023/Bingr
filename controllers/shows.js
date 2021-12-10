@@ -20,6 +20,15 @@ showsRouter.get("/shows", (req,res) => {
     });
 });
 
+showsRouter.get("/shows/favorites", (req,res) => {
+    Show.find({user_id: req.session.user, watched: true}).sort({user_rating: -1}).then(allShows => {
+        console.log(allShows);
+        // res.render("showFavorite.ejs", {
+        //     shows: allShows,
+        });
+    });
+// });
+
 
 // New
 showsRouter.get("/shows/new", (req,res) => {
@@ -57,7 +66,7 @@ showsRouter.put("/shows/:id", (req,res) => {
 
 // Create
 showsRouter.post("/shows", (req,res) => {
-    axios.get(`${BASE_URL}?t=${req.body.title}&apikey=${API_KEY}`).then(response => {
+    axios.get(`${BASE_URL}?t=${req.body.title}&type=series&apikey=${API_KEY}`).then(response => {
         req.body.title = response.data.Title
         req.body.writer = response.data.Writer
         req.body.user_id = req.session.user
@@ -79,7 +88,7 @@ showsRouter.post("/shows", (req,res) => {
 })
 
 // Edit
-showsRouter.get("/shows/:id", (req,res) => {
+showsRouter.get("/shows/:id/edit", (req,res) => {
     Show.findById(req.params.id, (error, foundShow) => {
         res.render("showEdit.ejs", {show:foundShow})    
     });

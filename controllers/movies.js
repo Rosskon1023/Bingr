@@ -57,7 +57,7 @@ moviesRouter.put("/movies/:id", (req,res) => {
 
 // Create
 moviesRouter.post("/movies", (req,res) => {
-    axios.get(`${BASE_URL}?t=${req.body.title}&apikey=${API_KEY}`).then(response => {
+    axios.get(`${BASE_URL}?t=${req.body.title}&type=movie&apikey=${API_KEY}`).then(response => {
         req.body.title = response.data.Title
         req.body.director = response.data.Director
         req.body.img = response.data.Poster
