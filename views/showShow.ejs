@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | <%=show.title%></title>
+</head>
+<body>
+    <h1>Bingr</h1>
+    <header>
+        <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/shows/new">Add Show</a>
+            <a class="navItem" href="/shows/<%=show._id%>/edit">Edit Show</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <div class="show-container">
+        <div class="subshowContainer1">
+            <p class="show-title"><%=show.title%></p>
+            <img class="show-image" src=<%=show.img%>>
+            <div class="show-edit-delete">
+                <form action="/shows/<%=show._id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Show" />
+                </form>
+                <a href="/shows/<%=show._id%>/edit">Edit Status/Rating</a>
+            </div>
+        </div>
+        <div class="subshowContainer2">
+            <div class="showCard">
+                <p> <span>Writer:</span> <%=show.writer%></p>
+                <p> <span>Years:</span> <%=show.year%></p>
+                <p> <span>Plot:</span> <%=show.plot%></p>
+                <p> <span>No. of Seasons</span> <%=show.seasons%></p>
+                <p> <span>Runtime:</span> <%=show.runtime%></p>
+                <p> <span>IMDB Rating:</span> <%=show.rating%>/10</p>
+                <% if (show.watched === true) { %>
+                    <p> <span>User Rating:</span> <%=show.user_rating%>/10</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
+</body>
+</html>

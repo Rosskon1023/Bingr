@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Show Edit</title>
+</head>
+<body>
+    <h1>Bingr - Edit Show</h1>
+    <header>
+        <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/shows/new">Add Show</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <div class="show-container">
+        <div class="subshowContainer1">
+            <p class="show-title"><%=show.title%></p>
+            <img class="show-image" src=<%=show.img%>>
+            <div class="show-edit-delete">
+                <form action="/shows/<%=show._id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Show" />
+                </form>
+            </div>
+        </div>
+        <div class="subeditContainer2">
+            <div class="editCard">
+                <form id="editForm" action="/shows/<%=show._id%>?_method=PUT" method="POST">
+                    <span>Have You Watched?</span> <input type="checkbox" name="watched" <%if(show.watched === true){ %> checked <% } %> /><br />
+                    <label for="rating"><span>Rating</span> (Between 0 and 10):</label>
+                        <input type="number" id="rating" name="user_rating" min="0" max="10" step="0.1" value="<%=show.user_rating%>">
+                    <input type="submit" value="Edit Show"/>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>    
+</html>
