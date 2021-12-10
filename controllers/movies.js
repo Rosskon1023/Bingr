@@ -31,7 +31,7 @@ moviesRouter.get("/movies/new", (req,res) => {
 moviesRouter.delete("/movies/:id", (req,res) => {
     Movie.findByIdAndDelete(req.params.id, (error, data) => {
         res.redirect("/movies")
-    })
+    });
 });
 
 
@@ -92,23 +92,6 @@ moviesRouter.get("/movies/:id", (req,res) => {
         res.render("movieShow.ejs", {movie:foundMovie})
     });
 });
-
-// moviesRouter.get("/moviestest", (req,res) => {
-//     axios.get(BASE_URL+'?t=Breaking Bad'+'&apikey='+API_KEY).then(response => {
-//         req.body.title = response.data.Title
-//         req.body.director = response.data.Director
-//         req.body.img = response.data.Poster
-//         req.body.plot = response.data.Plot
-//         req.body.rating = response.data.imdbRating
-//         req.body.user_id = req.session.user
-//         Movie.create(req.body, (error, createdMovie) => {
-//             res.send(createdMovie)
-//         })
-//         console.log(response.data);
-//         res.send(response.data);
-//         console.log(req.body);
-//     })
-// });
 
 // Export the Router/Controller Object
 module.exports = moviesRouter;

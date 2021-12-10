@@ -9,6 +9,7 @@ const session = require('express-session');
 const moviesController = require('./controllers/movies.js');
 const usersController = require('./controllers/users.js');
 const indexController = require('./controllers/index.js');
+const showsController = require('./controllers/shows.js');
 
 
 
@@ -51,6 +52,7 @@ app.use('/', xxxxController);
 app.use('/', indexController);
 app.use('/', usersController);
 app.use('/', moviesController);
+app.use('/', showsController);
 
 
 
