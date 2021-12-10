@@ -20,6 +20,15 @@ moviesRouter.get("/movies", (req,res) => {
     });
 });
 
+// Index Favorites Route
+moviesRouter.get("/movies/favorites", (req,res) => {
+    Movie.find({user_id: req.session.user, watched: true}).sort({user_rating: -1}).then(allMovies => {
+        res.render("movieFavorite.ejs", {
+            movies: allMovies,        
+        });
+    });
+});
+
 
 // New
 moviesRouter.get("/movies/new", (req,res) => {

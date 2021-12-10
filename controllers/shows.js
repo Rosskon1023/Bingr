@@ -20,14 +20,14 @@ showsRouter.get("/shows", (req,res) => {
     });
 });
 
+// Index Favorites Route
 showsRouter.get("/shows/favorites", (req,res) => {
     Show.find({user_id: req.session.user, watched: true}).sort({user_rating: -1}).then(allShows => {
-        console.log(allShows);
-        // res.render("showFavorite.ejs", {
-        //     shows: allShows,
+        res.render("showFavorite.ejs", {
+            shows: allShows,        
         });
     });
-// });
+});
 
 
 // New

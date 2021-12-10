@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | Favorite Shows</title>
+  </head>
+  <body>
+    <h1>Bingr</h1>
+    <header>
+        <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/shows/new">Add Show</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <div class="favoriteContainer">
+            <h3 class="favoriteTitle">&#x2b50; All Time Show Ratings! &#x2b50;</h3>
+            <div class="favorite-item-container">
+                        <% let n = 1; %>
+                        <% shows.forEach(show => { %>
+                        <div class="favorite-flex-item">
+                            <p class="favorite-flex-item-title"><%=n%>. <%=show.title%></p>
+                            <a class="favorite-flex-item-image" href="/shows/<%=show._id%>">
+                                <img src=<%=show.img%>>
+                            </a>
+                            <p class="favorite-flex-item-title" id="favorite-flex-item-data"><%=show.user_rating%>/10</p>
+                        </div>
+                            <% n+=1; %>
+                        <% }) %>
+            </div>         
+    </div>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
+  </body>
+</html>
