@@ -4,38 +4,55 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Index</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | All Movies</title>
   </head>
   <body>
+    <h1>Bingr - Movie Library</h1>
     <header>
-        <h1>Movies</h1>
+        <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/movies/new">Add Movie</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
     </header>
-    <a href="/movies/new">Add a new Movie</a>
-        <h3>Your Watched Movie List!</h3>
-            <% movies.forEach(movie => { %>
-                <% if (movie.watched === true) { %>
-                    <li>
-                        <p><%=movie.title%></p>
-                        <p><%=movie.director%></p>
-                        <a href="/movies/<%=movie._id%>">
-                            <img src=<%= movie.img %>>
-                        </a>
-                        <p><%=movie.plot%></p>
-                    </li>
-                <% } %>
-            <% }) %>
-        <h3>Movies to Watch</h3>
-            <% movies.forEach(movie => { %>
-                <% if (movie.watched === false) { %>
-                    <li>
-                        <p><%=movie.title%></p>
-                        <p><%=movie.director%></p>
-                        <a href="/movies/<%=movie._id%>">
-                            <img src=<%= movie.img %>>
-                        </a>
-                        <p><%=movie.plot%></p>
-                    </li>
-                <% } %>
-            <% }) %>
+    <div class="libraryContainer">
+        <div class="sublibraryContainer1">
+            <h3 class="sublibraryTitle">&#x1F39E; Bing'd It! &#x1F39E;</h3>
+            <div class="library-item-container">
+                        <% movies.forEach(movie => { %>
+                        <% if (movie.watched === true) { %>
+                        <div class="library-flex-item">
+                            <p class="flex-item-title"><%=movie.title%></p>
+                            <a class="flex-item-image" href="/movies/<%=movie._id%>">
+                                <img src=<%=movie.img%>>
+                            </a>
+                        </div>
+                        <% } %>
+                        <% }) %>
+            </div>         
+        </div>
+        <div class="sublibraryContainer2">
+            <h3 class="sublibraryTitle">&#x1F3AC; Up Next! &#x1F3AC;</h3>
+            <div class="library-item-container">
+                        <% movies.forEach(movie => { %>
+                        <% if (movie.watched === false) { %>
+                        <div class="library-flex-item">
+                            <p class="flex-item-title"><%=movie.title%></p>
+                            <a class="flex-item-image" href="/movies/<%=movie._id%>">
+                                <img src=<%=movie.img%>>
+                            </a>
+                        </div>
+                        <% } %>
+                        <% }) %>
+            </div>            
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
   </body>
 </html>

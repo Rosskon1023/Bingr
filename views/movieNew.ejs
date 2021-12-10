@@ -4,17 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Movie</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | Add Movie</title>
 </head>
 <body>
-        <header>
-            <h1>Movie | Add a New Movie!</h1>
-            <a href="/movies/">Return to Your Movies</a>
-        </header>
-        <form action="/movies" method="POST">
-            Movie Title: <input type="text" name="title"/><br />
-            Have You Watched? <input type="checkbox" name="watched"/><br />
-            Rating (Between 0 and 10):<input type="number" id="rating" name="user_rating" min="0" max="10" step="0.1">
-            <input type="submit" value="Add Movie"/>
-        </form>
+    <h1>Bingr - Add New Movie</h1>
+    <header>
+        <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
+    </header>
+    <form class="newForm" action="/movies" method="POST">
+        <div class="newContainer">
+            <div class="new-flex-item">
+                Movie Title: <input id="new_input" type="text" name="title"/><br />
+            </div>
+            <div class="new-flex-item">
+                Watched It? <input id="new_input" type="checkbox" name="watched"/><br />
+            </div>
+            <div class="new-flex-item">
+                Rating (Between 0 and 10):<input id="new_input" type="number" id="rating" name="user_rating" min="0" max="10" step="0.1">
+            </div> 
+            <div class="new-flex-item" id="last_new_flex_item">
+                <input id="new_button" type="submit" value="Add Movie"/>
+            </div> 
+        </div>
+    </form>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
 </html>

@@ -4,23 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Show Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Bingr | <%=movie.title%></title>
 </head>
 <body>
+    <h1>Bingr</h1>
     <header>
-        <h1>Bingr | <%=movie.title%></h1>
+        <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
+            <a class="navItem" href="/movies">Movies</a>
+            <a class="navItem" href="/shows">Shows</a>
+            <a class="navItem" href="/movies/new">Add Movie</a>
+            <a class="navItem" href="/movies/<%=movie._id%>/edit">Edit Movie</a>
+            <a class="navItem" href="/logout">Logout</a>
+        </nav>
     </header>
-    <img src=<%=movie.img%>>
-    <p> <%=movie.director%></p>
-    <p> <%=movie.year%></p>
-    <p> <%=movie.plot%></p>
-    <p> <%=movie.rating%></p>
-    <% if (movie.watched === true) { %>
-            <p><%=movie.user_rating%></p>
-    <% } %>
-    <form action="/movies/<%=movie._id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Movie" />
-    </form>
-    <a href="/movies/<%=movie._id%>/edit">Edit Watch Status/Rating</a>
+    <div class="show-container">
+        <div class="subshowContainer1">
+            <p class="show-title"><%=movie.title%></p>
+            <img class="show-image" src=<%=movie.img%>>
+            <div class="show-edit-delete">
+                <form action="/movies/<%=movie._id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Movie" />
+                </form>
+                <a href="/movies/<%=movie._id%>/edit">Edit Status/Rating</a>
+            </div>
+        </div>
+        <div class="subshowContainer2">
+            <div class="showCard">
+                <p> <span>Director:</span> <%=movie.director%></p>
+                <p> <span>Year of Release:</span> <%=movie.year%></p>
+                <p> <span>Plot:</span> <%=movie.plot%></p>
+                <p> <span>IMDB Rating:</span> <%=movie.rating%>/10</p>
+                <% if (movie.watched === true) { %>
+                    <p> <span>User Rating:</span> <%=movie.user_rating%>/10</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
+        <p>Ross Konesky</p>
+    </footer>
 </body>
 </html>
