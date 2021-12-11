@@ -84,6 +84,8 @@ showsRouter.post("/shows", (req,res) => {
         Show.create(req.body, (error, createdShow) => {
             res.redirect("/shows")
         })
+    }).catch(error => {
+        console.log(error);
     })
 })
 
