@@ -202,7 +202,7 @@ h1 {
     display:grid;
     grid-template-rows: 75px auto;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .sublibraryContainer2 {
@@ -210,7 +210,7 @@ h1 {
     display:grid;
     grid-template-rows: 75px auto;
     justify-items: center;
-    align-items: center;
+    align-items: flex-start;
     border-left: 3px solid white;
 }
 
@@ -219,6 +219,7 @@ h1 {
     color: white;
     font-size: 44px;
     text-decoration: underline;
+    margin-top: 10px;
     text-shadow: 2px 2px #b93e3ef6;
 }
 
