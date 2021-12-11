@@ -23,11 +23,11 @@ Bingr is a full CRUD application that allows the user to:
 ## Screenshots
 
 ![screenshot 1](https://i.imgur.com/JZFXg6k.png) <!--- Screenshot of the Landing Page -->
-![screenshot 2]() <!--- Screenshot of the Sign Up Page -->
-![screenshot 3]() <!--- Screenshot of the Dashboard Page -->
-![screenshot 4]() <!--- Screenshot of the Movie/Show Index Page -->
-![screenshot 5]() <!--- Screenshot of the Movie/Show Show Page -->
-![screenshot 6]() <!--- Screenshot of the Movie/Show Ratings Page -->
+![screenshot 2](https://i.imgur.com/q2LbxBf.png) <!--- Screenshot of the Sign Up Page -->
+![screenshot 3](https://i.imgur.com/idoptjx.png) <!--- Screenshot of the Dashboard Page -->
+![screenshot 4](https://i.imgur.com/IGwNPq0.png) <!--- Screenshot of the Movie/Show Index Page -->
+![screenshot 5](https://i.imgur.com/rlSNnZa.png) <!--- Screenshot of the Movie/Show Show Page -->
+![screenshot 6](https://i.imgur.com/g5y9GLr.png) <!--- Screenshot of the Movie/Show Ratings Page -->
 
 ## Getting Started 
 [Click here](https://bingr-app.herokuapp.com/) to get started! Log in to your Bingr account or Sign up for free! 
