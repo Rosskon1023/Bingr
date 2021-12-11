@@ -22,7 +22,7 @@ Bingr is a full CRUD application that allows the user to:
 
 ## Screenshots
 
-![screenshot 1]("https://i.imgur.com/JZFXg6k.png") <!--- Screenshot of the Landing Page -->
+![screenshot 1](https://i.imgur.com/JZFXg6k.png) <!--- Screenshot of the Landing Page -->
 ![screenshot 2]() <!--- Screenshot of the Sign Up Page -->
 ![screenshot 3]() <!--- Screenshot of the Dashboard Page -->
 ![screenshot 4]() <!--- Screenshot of the Movie/Show Index Page -->
