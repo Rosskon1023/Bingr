@@ -30,6 +30,7 @@ h1 {
     align-items: center;
     justify-content: center;
     background: rgba(163, 75, 75, 0.8);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 .navBar {
@@ -37,6 +38,7 @@ h1 {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+    font-family: 'Nunito', sans-serif;
 }
 
 .navItem {
@@ -271,6 +273,7 @@ h1 {
 .show-title {
     color: white;
     font-size: 30px;
+    font-family: 'Jura', sans-serif;
 }
 
 .show-image {
@@ -303,12 +306,19 @@ h1 {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    font-size: 20px;
+    font-size: 16px;
+    font-family: 'Courier Prime', monospace;
 }
 
 .showCard p {
     color: black;
     text-align: left;
+}
+
+.showCard #showTitle {
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
 }
 
 .showCard span {
