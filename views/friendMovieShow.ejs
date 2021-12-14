@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fugaz+One&family=Jura:wght@700&family=Nosifer&family=Nunito:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="/public/favicon.ico">
-    <title>Bingr | Add Movie</title>
+    <title>Bingr | <%=movie.title%></title>
 </head>
 <body>
-    <h1>Bingr - Add A New Friend</h1>
+    <h1>Bingr</h1>
     <header>
         <nav class="navBar">
             <a class="navItem" href="/dashboard">Home</a>
@@ -20,15 +20,25 @@
             <a class="navItem" href="/logout">Logout</a>
         </nav>
     </header>
-    <form class="newForm" action="/friends" method="POST">
-        <div class="newContainer">
-            <div class="new-flex-item">
-                Friend Username: <input id="new_friend_input" type="text" name="username"/><br />
-            </div>
-            <div class="new-flex-item" id="last_new_flex_item">
-                <input id="new_button" type="submit" value="Add Friend"/>
-            </div> 
+    <div class="show-container">
+        <div class="subshowContainer1">
+            <p class="show-title"><%=movie.title%></p>
+            <img class="show-image" src=<%=movie.img%>>
         </div>
-    </form>
+        <div class="subshowContainer2">
+            <div class="showCard">
+                <p id="showTitle"> ~~~ SCENE: <%=movie.title%> ~~~</p>
+                <p> <span>Director:</span> <%=movie.director%></p>
+                <p> <span>Year of Release:</span> <%=movie.year%></p>
+                <p> <span>Plot:</span> <%=movie.plot%></p>
+                <p> <span>Box Office:</span> <%=movie.box_office%></p>
+                <p> <span>IMDB Rating:</span> <%=movie.rating%>/10</p>
+                <% if (movie.watched === true) { %>
+                    <p> <span>User Rating:</span> <%=movie.user_rating%>/10</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
     <%- include("./partials/footer.ejs")%>
+</body>
 </html>

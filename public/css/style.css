@@ -506,6 +506,13 @@ h1 {
     margin: 10px;
 }
 
+#new_friend_input {
+    font-size: 26px;
+    margin-left: 10px;
+    align-self: center;
+    margin-right: 10px;
+}
+
 footer {
     display: flex;
     align-items: center;

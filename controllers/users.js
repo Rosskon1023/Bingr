@@ -88,7 +88,7 @@ usersRouter.post("/friends", async (req,res) => {
 // Index Friends Shows/Movies
 
 usersRouter.get("/friends/:id/movies", (req,res) => {
-    Movie.find({user_id:req.params.id}, (error, allMovies) => {
+    Movie.find({user_id:req.params.id}).sort({user_rating: -1}).then(allMovies => {
         res.render("friendMovieIndex.ejs", {
             movies: allMovies, 
         });
@@ -96,7 +96,7 @@ usersRouter.get("/friends/:id/movies", (req,res) => {
 });
 
 usersRouter.get("/friends/:id/shows", (req,res) => {
-    Show.find({user_id:req.params.id}, (error, allShows) => {
+    Show.find({user_id:req.params.id}).sort({user_rating: -1}).then(allShows => {
         res.render("friendShowIndex.ejs", {
             shows: allShows,
         });
@@ -148,6 +148,20 @@ usersRouter.post("/friends/:id/movies", (req,res) => {
         })
     })
 })
+
+// Friend Show Routes
+
+usersRouter.get("/friends/movies/:id", (req,res) => {
+    Movie.findById(req.params.id, (error, foundMovie) => {
+        res.render("friendMovieShow.ejs", {movie:foundMovie})
+    });
+});
+
+usersRouter.get("/friends/shows/:id", (req,res) => {
+    Show.findById(req.params.id, (error, foundShow) => {
+        res.render("friendShowShow.ejs", {show:foundShow})
+    });
+});
 
 // Export the Router/Controller Object
 module.exports = usersRouter;
