@@ -1,8 +1,10 @@
 // Require Dependencies
 const express = require('express');
 require('dotenv').config();
+const axios = require('axios');
 const bcrypt = require('bcrypt');
 const SALT_ROUNDS = 10;
+const {API_KEY, BASE_URL} = process.env;
 
 // Create a Route Object
 const usersRouter = express.Router();
@@ -100,6 +102,52 @@ usersRouter.get("/friends/:id/shows", (req,res) => {
         });
     });
 });
+
+// Post from Friends Shows/Movies
+usersRouter.post("/friends/:id/shows", (req,res) => {
+    axios.get(`${BASE_URL}?t=${req.body.title}&type=series&apikey=${API_KEY}`).then(response => {
+        req.body.title = response.data.Title
+        req.body.writer = response.data.Writer
+        req.body.user_id = req.session.user
+        req.body.img = response.data.Poster
+        req.body.plot = response.data.Plot
+        req.body.seasons = response.data.totalSeasons
+        req.body.rating = response.data.imdbRating
+        req.body.runtime = response.data.Runtime
+        req.body.year = response.data.Year
+        if(req.body.watched === 'on') {
+            req.body.watched = true
+        } else {
+            req.body.watched = false
+        }
+        Show.create(req.body, (error, createdShow) => {
+            res.redirect(`/friends/${req.params.id}/shows`)
+        })
+    }).catch(error => {
+        console.log(error);
+    })
+})
+
+usersRouter.post("/friends/:id/movies", (req,res) => {
+    axios.get(`${BASE_URL}?t=${req.body.title}&type=movie&apikey=${API_KEY}`).then(response => {
+        req.body.title = response.data.Title
+        req.body.director = response.data.Director
+        req.body.img = response.data.Poster
+        req.body.plot = response.data.Plot
+        req.body.box_office = response.data.BoxOffice
+        req.body.rating = response.data.imdbRating
+        req.body.year = response.data.Year
+        req.body.user_id = req.session.user
+        if(req.body.watched === 'on') {
+            req.body.watched = true
+        } else {
+            req.body.watched = false
+        }
+        Movie.create(req.body, (error, createdMovie) => {
+            res.redirect(`/friends/${req.params.id}/movies`)
+        })
+    })
+})
 
 // Export the Router/Controller Object
 module.exports = usersRouter;

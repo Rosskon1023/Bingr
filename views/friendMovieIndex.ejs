@@ -25,11 +25,16 @@
             <div class="library-item-container">
                         <% movies.forEach(movie => { %>
                         <% if (movie.watched === true) { %>
-                        <div class="library-flex-item">
+                        <div class="friend-index-flex-item">
                             <p class="flex-item-title"><%=movie.title%></p>
+                            <p class="flex-item-title">Rating: <%=movie.user_rating%></p>
                             <p class="flex-item-image">
                                 <img src=<%=movie.img%>>
                             </p>
+                            <form class="friendNewProgram" action="/friends/<%=movie.user_id%>/movies" method="POST">
+                                <input type="hidden" name="title" value="<%=movie.title%>">
+                                <input id="new_button" type="submit" value="Add Movie"/>
+                            </form>
                         </div>
                         <% } %>
                         <% }) %>
@@ -40,11 +45,16 @@
             <div class="library-item-container">
                         <% movies.forEach(movie => { %>
                         <% if (movie.watched === false) { %>
-                        <div class="library-flex-item">
+                        <div class="friend-index-flex-item">
                             <p class="flex-item-title"><%=movie.title%></p>
+                            <p class="flex-item-title">Rating: TBD</p>
                             <p class="flex-item-image">
                                 <img src=<%=movie.img%>>
                             </p>
+                            <form class="friendNewProgram" action="/friends/<%=movie.user_id%>/movies" method="POST">
+                                <input type="hidden" name="title" value="<%=movie.title%>">
+                                <input id="new_button" type="submit" value="Add Movie"/>
+                            </form>
                         </div>
                         <% } %>
                         <% }) %>
