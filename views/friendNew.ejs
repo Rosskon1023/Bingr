@@ -6,31 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fugaz+One&family=Jura:wght@700&family=Nosifer&family=Nunito:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <title>Bingr Dashboard</title>
+    <title>Bingr | Add Movie</title>
 </head>
 <body>
-    <h1>Bingr</h1>
+    <h1>Bingr - Add A New Friend</h1>
     <header>
         <nav class="navBar">
+            <a class="navItem" href="/dashboard">Home</a>
             <a class="navItem" href="/movies">Movies</a>
             <a class="navItem" href="/shows">Shows</a>
             <a class="navItem" href="/logout">Logout</a>
         </nav>
     </header>
-    <div id="dashboardContainer">
-        <h3 id="dashboardWelcome"><span class="dashboardSpacing">&#x1F37F; &#x1F37F; </span>It's Popcorn time, <%=user.username%> <span class="dashboardSpacing">!! &#x1F37F; &#x1F37F; </span> </h3>
-        <div id="dashboardMovie">
-            <h4>MOVIES</h4>
-            <a href="/movies">&#x1F3A5;</a>
+    <form class="newForm" action="/friends" method="POST">
+        <div class="newContainer">
+            <div class="new-flex-item">
+                Friend Username: <input id="new_input" type="text" name="username"/><br />
+            </div>
+            <div class="new-flex-item" id="last_new_flex_item">
+                <input id="new_button" type="submit" value="Add Friend"/>
+            </div> 
         </div>
-        <div id="dashboardShow"> 
-            <h4>SHOWS</h4>
-            <a href="/shows">&#x1F4FA;</a>
-        </div>
-    </div>
+    </form>
     <footer>
         <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>
         <p>Ross Konesky</p>
     </footer>
-</body>
 </html>

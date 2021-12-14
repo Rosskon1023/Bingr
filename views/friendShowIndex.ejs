@@ -9,14 +9,13 @@
     <title>Bingr | All Shows</title>
   </head>
   <body>
-    <h1>Bingr - Show Library</h1>
+    <h1>Bingr - Friend Show Library</h1>
     <header>
         <nav class="navBar">
             <a class="navItem" href="/dashboard">Home</a>
             <a class="navItem" href="/movies">Movies</a>
             <a class="navItem" href="/shows">Shows</a>
-            <a class="navItem" href="/shows/favorites">My Show Ratings</a>
-            <a class="navItem" href="/shows/new">Add Show</a>
+            <a class="navItem" href="/friends">Friends</a>
             <a class="navItem" href="/logout">Logout</a>
         </nav>
     </header>
@@ -28,9 +27,9 @@
                         <% if (show.watched === true) { %>
                         <div class="library-flex-item">
                             <p class="flex-item-title"><%=show.title%></p>
-                            <a class="flex-item-image" href="/shows/<%=show._id%>">
+                            <p class="flex-item-image">
                                 <img src=<%=show.img%>>
-                            </a>
+                            </p>
                         </div>
                         <% } %>
                         <% }) %>
@@ -43,9 +42,9 @@
                         <% if (show.watched === false) { %>
                         <div class="library-flex-item">
                             <p class="flex-item-title"><%=show.title%></p>
-                            <a class="flex-item-image" href="/shows/<%=show._id%>">
+                            <p class="flex-item-image">
                                 <img src=<%=show.img%>>
-                            </a>
+                            </p>
                         </div>
                         <% } %>
                         <% }) %>

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fugaz+One&family=Jura:wght@700&family=Nosifer&family=Nunito:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <title>Bingr Dashboard</title>
+    <title>Bingr | Friends</title>
 </head>
 <body>
     <h1>Bingr</h1>
@@ -18,15 +18,14 @@
         </nav>
     </header>
     <div id="dashboardContainer">
-        <h3 id="dashboardWelcome"><span class="dashboardSpacing">&#x1F37F; &#x1F37F; </span>It's Popcorn time, <%=user.username%> <span class="dashboardSpacing">!! &#x1F37F; &#x1F37F; </span> </h3>
-        <div id="dashboardMovie">
-            <h4>MOVIES</h4>
-            <a href="/movies">&#x1F3A5;</a>
-        </div>
-        <div id="dashboardShow"> 
-            <h4>SHOWS</h4>
-            <a href="/shows">&#x1F4FA;</a>
-        </div>
+        <h3 id="dashboardWelcome"><%=user.username%>'s Friends </h3>
+        <% user.friends.forEach(friend => { %>
+            <div class="library-flex-item">
+                <p class="flex-item-title"><%=friend.username%></p>
+                <a href="/friends/<%= friend.friend_id %>/shows">Shows</a>
+                <a href="/friends/<%= friend.friend_id %>/movies">Movies</a>
+            </div>
+            <% }) %>
     </div>
     <footer>
         <p>Copyright &copy; All Rights Reserved || 2021 Bingr</p>

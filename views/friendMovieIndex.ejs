@@ -6,17 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Fugaz+One&family=Jura:wght@700&family=Nosifer&family=Nunito:wght@300&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <title>Bingr | All Shows</title>
+    <title>Bingr | All Movies</title>
   </head>
   <body>
-    <h1>Bingr - Show Library</h1>
+    <h1>Bingr - Friend Movie Library</h1>
     <header>
         <nav class="navBar">
             <a class="navItem" href="/dashboard">Home</a>
             <a class="navItem" href="/movies">Movies</a>
             <a class="navItem" href="/shows">Shows</a>
-            <a class="navItem" href="/shows/favorites">My Show Ratings</a>
-            <a class="navItem" href="/shows/new">Add Show</a>
+            <a class="navItem" href="/friends">Friends</a>
             <a class="navItem" href="/logout">Logout</a>
         </nav>
     </header>
@@ -24,13 +23,13 @@
         <div class="sublibraryContainer1">
             <h3 class="sublibraryTitle">&#x1F39E; Bing'd It! &#x1F39E;</h3>
             <div class="library-item-container">
-                        <% shows.forEach(show => { %>
-                        <% if (show.watched === true) { %>
+                        <% movies.forEach(movie => { %>
+                        <% if (movie.watched === true) { %>
                         <div class="library-flex-item">
-                            <p class="flex-item-title"><%=show.title%></p>
-                            <a class="flex-item-image" href="/shows/<%=show._id%>">
-                                <img src=<%=show.img%>>
-                            </a>
+                            <p class="flex-item-title"><%=movie.title%></p>
+                            <p class="flex-item-image">
+                                <img src=<%=movie.img%>>
+                            </p>
                         </div>
                         <% } %>
                         <% }) %>
@@ -39,13 +38,13 @@
         <div class="sublibraryContainer2">
             <h3 class="sublibraryTitle">&#x1F3AC; Up Next! &#x1F3AC;</h3>
             <div class="library-item-container">
-                        <% shows.forEach(show => { %>
-                        <% if (show.watched === false) { %>
+                        <% movies.forEach(movie => { %>
+                        <% if (movie.watched === false) { %>
                         <div class="library-flex-item">
-                            <p class="flex-item-title"><%=show.title%></p>
-                            <a class="flex-item-image" href="/shows/<%=show._id%>">
-                                <img src=<%=show.img%>>
-                            </a>
+                            <p class="flex-item-title"><%=movie.title%></p>
+                            <p class="flex-item-image">
+                                <img src=<%=movie.img%>>
+                            </p>
                         </div>
                         <% } %>
                         <% }) %>

@@ -7,6 +7,8 @@ const SALT_ROUNDS = 10;
 // Create a Route Object
 const usersRouter = express.Router();
 const User = require('../models/user.js');
+const Movie = require('../models/movie.js');
+const Show = require('../models/show.js');
 
 // List Router Actions / Define Routes
 
@@ -56,18 +58,48 @@ usersRouter.get("/dashboard", (req,res) => {
     });
 });
 
+// FRIEND ROUTES 
 
+// Friend Index Route
+usersRouter.get("/friends", (req,res) => {
+    User.findById(req.session.user, (err, user) => {
+        res.render('friends.ejs', {user});
+    });
+})
 
+// New Friend Route
+usersRouter.get("/friends/new", (req,res) => {
+    res.render("friendNew.ejs")
+});
 
-// usersRouter.get("/signup", (req,res) => {
-//     req.body.name = "Ross";
-//     req.body.email = "test@email.com";
-//     req.body.password = "123456";
-//     User.create(req.body, (error, user) => {
-//         req.session.user = user._id;
-//         res.send(user)
-//     })
-// });
+// Create Friend Route
+
+usersRouter.post("/friends", async (req,res) => {
+    const user = await User.findById(req.session.user);
+    const friend = await User.findOne({username: req.body.username});
+    req.body.friend_id = friend._id.toString();
+    user.friends.push(req.body);
+    await user.save();
+    res.redirect("/friends");
+});
+
+// Index Friends Shows/Movies
+
+usersRouter.get("/friends/:id/movies", (req,res) => {
+    Movie.find({user_id:req.params.id}, (error, allMovies) => {
+        res.render("friendMovieIndex.ejs", {
+            movies: allMovies,  
+        });
+    });
+});
+
+usersRouter.get("/friends/:id/shows", (req,res) => {
+    Show.find({user_id:req.params.id}, (error, allShows) => {
+        res.render("friendShowIndex.ejs", {
+            shows: allShows,  
+        });
+    });
+});
 
 // Export the Router/Controller Object
 module.exports = usersRouter;
