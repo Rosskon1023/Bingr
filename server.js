@@ -5,12 +5,12 @@ const methodOverride = require('method-override');
 require('dotenv').config();
 const morgan = require('morgan');
 const session = require('express-session');
-/* TO DO: ADD CONTROLLERS */
+
+// Adds Controllers
 const moviesController = require('./controllers/movies.js');
 const usersController = require('./controllers/users.js');
 const indexController = require('./controllers/index.js');
 const showsController = require('./controllers/shows.js');
-
 
 
 // Initialize the Application
@@ -32,7 +32,8 @@ db.on("connected", () => console.log("Mongo Connected"));
 db.on("disconnected", () => console.log("Mongo is disconnected"));
 
 // Mount Middleware
-app.use(express.static('public'));
+app.use("/public", express.static('public'));
+app.use(express.static('public')); 
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 app.use(morgan('dev')); 
@@ -46,9 +47,6 @@ app.use(
 
 
 // Mount Routes
-/* TO DO: Mount Routes
-app.use('/', xxxxController);
-*/
 app.use('/', indexController);
 app.use('/', usersController);
 app.use('/', moviesController);
