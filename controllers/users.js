@@ -88,7 +88,7 @@ usersRouter.post("/friends", async (req,res) => {
 usersRouter.get("/friends/:id/movies", (req,res) => {
     Movie.find({user_id:req.params.id}, (error, allMovies) => {
         res.render("friendMovieIndex.ejs", {
-            movies: allMovies,  
+            movies: allMovies, 
         });
     });
 });
@@ -96,7 +96,7 @@ usersRouter.get("/friends/:id/movies", (req,res) => {
 usersRouter.get("/friends/:id/shows", (req,res) => {
     Show.find({user_id:req.params.id}, (error, allShows) => {
         res.render("friendShowIndex.ejs", {
-            shows: allShows,  
+            shows: allShows,
         });
     });
 });
