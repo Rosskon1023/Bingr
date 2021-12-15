@@ -1,14 +1,14 @@
 # Bingr
 
 Bingr is a full CRUD application that allows the user to:
-Personal:
+* Personal:
     - Login to their very own Bingr profile
     - Add their own list of movies/shows
         - Maintain and track movies and shows that you have watched (Bing'd it!) or want to watch (Up next!)
     - Rate Bing'd movies and shows and view your watched movie/show ratings
     - Edit ratings and watched status
     - Delete movies/shows from their profile
-Social:
+* Social:
     - Add Friends that have a Bingr account by their username
     - View your friends movies, shows and user ratings
     - Use your friends' pages as a "discover" page and add shows/movies to your list directly from theirs!
@@ -37,4 +37,5 @@ Social:
 ## Getting Started 
 [Click here](https://bingr-app.herokuapp.com/) to get started! Log in to your Bingr account or Sign up for free! 
 
-## Future Enhancements 
+## Future Enhancements
+- Add 
