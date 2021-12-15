@@ -493,6 +493,8 @@ h1 {
 
 .friend-item-title {
     font-family: 'Jura', sans-serif;
+    width: 200px;
+    text-align: left;
 }
 
 .friend-index-flex-item {
